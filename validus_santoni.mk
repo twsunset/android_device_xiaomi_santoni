@@ -16,13 +16,18 @@
 
 $(call inherit-product, device/xiaomi/santoni/full_santoni.mk)
 
-# Inherit some common Superior stuff.
-$(call inherit-product, vendor/superior/config/common.mk)
+# Inherit some common Validus stuff.
+$(call inherit-product, vendor/validus/config/common_full_phone.mk)
+
+
+TARGET_ARCH := arm64
+TARGET_DENSITY := xhdpi
+TARGET_BOOT_ANIMATION_RES := 720
 
 PRODUCT_DEVICE := santoni
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 4X
-PRODUCT_NAME := superior_santoni
+PRODUCT_NAME := validus_santoni
 BOARD_VENDOR := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
@@ -32,5 +37,6 @@ TARGET_VENDOR_PRODUCT_NAME := santoni
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="santoni-user 7.1.2 N2G47H V9.5.10.0.NAMMIFD release-keys" \
+    DEVICE_MAINTAINERS="twsunset"
 
 BUILD_FINGERPRINT := "Xiaomi/santoni/santoni:7.1.2/N2G47H/V9.5.10.0.NAMMIFD:user/release-keys"
